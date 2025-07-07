@@ -23,14 +23,15 @@ This is an AI-powered Resume Analyzer and Optimizer built with **Google Gemini 1
 🚀 How to Run Locally
 
  1. Clone the Repository
-git clone https://github.com/beryl32/ats-resume-analyzer.git
+ git clone https://github.com/beryl32/ats-resume-analyzer.git
 
-cd ats-resume-analyzer
+ cd ats-resume-analyzer
 
 2. Install Dependencies
 pip install -r requirements.txt
 
 3. Add Your Gemini API Key
+
 Create a .env file in the root directory and paste your API key:
 GOOGLE_API_KEY=your_gemini_api_key_here
 
@@ -40,9 +41,9 @@ streamlit run app.py
 
 🧠 How It Works
 
-1.  The user uploads a PDF resume.
+1. The user uploads a PDF resume.
 
-2.The app converts the first page to an image using pdf2image.
+2. The app converts the first page to an image using pdf2image.
 
 3. The image is encoded to Base64 and sent along with a job description to Google Gemini.
 
@@ -50,17 +51,18 @@ streamlit run app.py
 
 5. Evaluates it
 
-6.Matches it against job description
+6. Matches it against job description
 
-7.Suggests improvements
+7. Suggests improvements
 
 8. The user can download a professionally rewritten resume as a PDF.
 
 
 
 🔒 Important Notes
-Only the first page of the PDF is currently analyzed.
 
-The app requires Poppler for PDF-to-image conversion (on Windows).
+ Only the first page of the PDF is currently analyzed.
+
+ The app requires Poppler for PDF-to-image conversion (on Windows).
 
 

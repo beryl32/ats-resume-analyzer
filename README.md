@@ -23,9 +23,9 @@ This is an AI-powered Resume Analyzer and Optimizer built with **Google Gemini 1
 🚀 How to Run Locally
 
  1. Clone the Repository
- git clone https://github.com/beryl32/ats-resume-analyzer.git
+  git clone https://github.com/beryl32/ats-resume-analyzer.git
 
- cd ats-resume-analyzer
+  cd ats-resume-analyzer
 
 2. Install Dependencies
 pip install -r requirements.txt
@@ -61,8 +61,8 @@ streamlit run app.py
 
 🔒 Important Notes
 
- Only the first page of the PDF is currently analyzed.
+ 1. Only the first page of the PDF is currently analyzed.
 
- The app requires Poppler for PDF-to-image conversion (on Windows).
+ 2. The app requires Poppler for PDF-to-image conversion (on Windows).
 
 

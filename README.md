@@ -23,20 +23,23 @@ This is an AI-powered Resume Analyzer and Optimizer built with **Google Gemini 1
 🚀 How to Run Locally
 
  1. Clone the Repository
-  git clone https://github.com/beryl32/ats-resume-analyzer.git
-
-  cd ats-resume-analyzer
+    git clone https://github.com/beryl32/ats-resume-analyzer.git
+   
+    cd ats-resume-analyzer
 
 2. Install Dependencies
-pip install -r requirements.txt
+   
+    pip install -r requirements.txt
 
 3. Add Your Gemini API Key
 
-Create a .env file in the root directory and paste your API key:
-GOOGLE_API_KEY=your_gemini_api_key_here
+   Create a .env file in the root directory and paste your API key:
+
+   GOOGLE_API_KEY=your_gemini_api_key_here
 
 4. Run the Streamlit App
-streamlit run app.py
+
+   streamlit run app.py
 
 
 🧠 How It Works

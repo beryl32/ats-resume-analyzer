@@ -11,16 +11,16 @@ import pdf2image
 import google.generativeai as genai
 import html
 
-# ✅ Configure Gemini API
+# Configure Gemini API
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# ✅ Get Gemini response
+# Get Gemini response
 def get_gemini_response(input, pdf_content, prompt):
     model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content([input, pdf_content[0], prompt])
     return response.text  # ✅ Return only the response text for clean output
 
-# ✅ Convert PDF to image bytes
+# Convert PDF to image bytes
 def input_pdf_setup(uploaded_file):
     if uploaded_file is not None:
         # Convert the PDF to image (first page only)
@@ -45,7 +45,7 @@ def input_pdf_setup(uploaded_file):
     else:
         raise FileNotFoundError("No file uploaded")
 
-# ✅ Streamlit UI
+# Streamlit UI
 st.set_page_config(page_title="ATS Resume Expert")
 st.header("ATS Resume Analyzer")
 
@@ -86,7 +86,7 @@ Keep it concise and relevant to the job description.
 """
 
 
-# 🧠 Resume Evaluation
+#  Resume Evaluation
 if submit1:
     if uploaded_file:
         pdf_content = input_pdf_setup(uploaded_file)
@@ -113,11 +113,11 @@ elif submit4:
         st.subheader("📝 Optimized Resume Text:")
         st.write(response)
 
-        # ✅ Clean the text for PDF
+        # Clean the text for PDF
         cleaned_response = html.unescape(response)
         cleaned_response = cleaned_response.encode('latin-1', errors='ignore').decode('latin-1')
 
-        # ✅ Create PDF
+        #  Create PDF
         pdf = FPDF()
         pdf.add_page()
         pdf.set_auto_page_break(auto=True, margin=15)
@@ -126,10 +126,10 @@ elif submit4:
         for line in cleaned_response.split('\n'):
             pdf.multi_cell(0, 10, line)
 
-        # ✅ Convert to byte stream
+        #  Convert to byte stream
         pdf_bytes = pdf.output(dest='S').encode('latin-1')
 
-        # ✅ Streamlit download button
+        # Streamlit download button
         st.download_button(
             label="📥 Download Resume as PDF",
             data=pdf_bytes,
